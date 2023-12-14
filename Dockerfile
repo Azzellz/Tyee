@@ -4,6 +4,9 @@ FROM node:lts-alpine
 # 设置工作目录
 WORKDIR /app
 
+# 设置npm使用特定的源
+RUN npm config set registry https://registry.npmmirror.com/
+
 # 复制package.json和package-lock.json
 COPY package*.json ./
 
