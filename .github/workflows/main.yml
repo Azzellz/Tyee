@@ -11,12 +11,10 @@ on:
     branches:
       - main
 jobs:
-  check-bats-version:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: ls
+      - name: Checkout repository 
+        uses: actions/checkout@v2
+      - name: Set Up SSH #ssh连接到远程服务器
+        run: ls
