@@ -1,6 +1,11 @@
 name: Tyee's
 run-name: ${{ github.actor }} is acting!
-on: [push]
+on: 
+  push:
+  # 限制分支
+    branches:
+      - main
+      - 'releases/**'
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -9,5 +14,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: npm install
+      - run: ls
