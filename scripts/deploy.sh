@@ -23,6 +23,10 @@ echo "镜像构建完毕!"
 
 # 创建临时容器并复制构建产物到宿主机指定目录
 docker create --name temp_container ${IMAGE_NAME}:${TAG}
+
+# 将临时容器中的构建产物复制到宿主机上的目标目录(nginx的静态网页部署页)
 docker cp temp_container:/app/dist ${HOST_OUTPUT_DIR}
+
+#删除临时容器!
 docker rm temp_container
 
