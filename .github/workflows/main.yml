@@ -1,0 +1,27 @@
+name: Tyee's
+run-name: ${{ github.actor }} is acting!
+on: 
+# 推送触发
+  push:
+  # 限制分支
+    branches:
+      - main
+# 推送请求触发
+  pull_request:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository 
+        uses: actions/checkout@v2
+      - name: Set Up SSH #ssh连接到远程服务器
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 121.40.249.233 >> ~/.ssh/known_hosts
+      - name: Deploy to Server
+        run: |
+          ssh -i ~/.ssh/id_rsa root@121.40.249.233 'bash -s' < scripts/deploy.sh
