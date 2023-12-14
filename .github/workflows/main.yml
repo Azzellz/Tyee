@@ -1,11 +1,15 @@
 name: Tyee's
 run-name: ${{ github.actor }} is acting!
 on: 
+# 推送触发
   push:
   # 限制分支
     branches:
       - main
-      - 'releases/**'
+# 推送请求触发
+  pull_request:
+    branches:
+      - main
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
