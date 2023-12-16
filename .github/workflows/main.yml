@@ -20,6 +20,7 @@ jobs:
       # vite打包
       - name: Build the project
         run: |
+          npm install
           npm run build
       #配置ssh环境
       - name: Set Up SSH 
