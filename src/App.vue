@@ -1,8 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Hello!</div>
-  <div>This is Tyee's!</div>
+  <router-view></router-view>
 </template>
 
 <style scoped></style>
