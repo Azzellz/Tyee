@@ -1,0 +1,29 @@
+
+/* 配置字体 */
+/* 注意不要在组件内单独配置字体等公共资源文件!!! */
+@font-face {
+    /* 自定义的字体名称 */
+    font-family: 'lovely-bear';
+    /* TTF格式的路径和格式 */
+    src: url('../ttf/lovely-bear.ttf') format('truetype');
+    /* 字体的粗细 */
+    font-weight: normal;
+    /* 字体的风格 */
+    font-style: normal;
+}
+
+
+/* 清除默认样式 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    /* 占满整个视窗 */
+    width: 100vw;
+    height: 100vh;
+    /* 配置自定义字体 */
+    font-family: 'lovely-bear', sans-serif;
+}
+
