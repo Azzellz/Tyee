@@ -33,7 +33,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
         right: 0;
         bottom: 0;
         left: 0;
-        background-image: url('../assets/img/bg/hoshino.png');
+        // background-image: url('../assets/img/bg/hoshino.png');
         background-size: cover;
         background-repeat: no-repeat;
         filter: blur(5px); /* 设置模糊效果 */
